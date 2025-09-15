@@ -15,17 +15,15 @@
 // 2. in html doc using script we can embed
 // 3. by using run time environment like nodejs
 
-console.log("hello adarsh madhusoodhanan");
+console.log("Hello World");
+// Hello World
 
-// window.alert("Hello adarsh dont laugh at me ");
-
-// document.getElementById('my').textContent='Hello';
-
-// assiging variables:
+// asign variables:
 let first_name="Adarsh";
 let age=22;
-
 console.log(first_name,age)
-
+// Adarsh 22
 console.log(typeof first_name);
+// string
 console.log(typeof age)
+// number
