@@ -1,6 +1,9 @@
+// JAVASCRIPT:
 // Initially created to make our page alive
-// It is high level programming scripting , interpreted and single threaded 
-// Developed by brendon eich 1995. company netscape communications. developed in 10 days. first name is mocha.
+// It is high level programming scripting , interpreted (line by line) and single threaded 
+//      (run only one piece of code at a time it exceute each task sequentlially)
+// Developed by brendon eich 1995. company netscape communications. 
+//      developed in 10 days. first name is mocha.
 // Features:
 //  It has full integration with HTML and css
 //  Simple things are done simply
@@ -8,7 +11,9 @@
 //  Doesnt required any special preparation and complation for exceution
 //  All major browser supports JS
 //  It is case sensitive
-// .js - extension 
+//  .js - extension 
+
+// ---------------------------------------------------------------------------------------
 
 // Writing and exceuting 
 // 1. Directly inside the browser, using console
@@ -42,7 +47,7 @@ console.log("Hello World");
 
 var firstName="Keerthana G"
 console.log(firstName)
-document.writeln("My name is ",firstName)  // to print in web page
+// document.writeln("My name is ",firstName)  // to print in web page
 {
     var age=21;
     console.log("inside the block",age);
@@ -75,6 +80,8 @@ console.log(secondName)
     let gender="Female"
     console.log("inside the block:",gender)
 }
+// console.log("Outside block",gender)
+// ReferenceError: gender is not defined
 {
     let secondName="P T"
     console.log(secondName)
@@ -86,12 +93,13 @@ console.log(secondName)
     // let secondName="P T"
     // console.log(secondName)
 // }
-let gender='Male'
-console.log(gender)
-// output: Male
 
 // console.log("outside the block:",gender)
 // basics.js:73 Uncaught ReferenceError: gender is not defined at basics.js:73:34
+
+let gender='Male'
+console.log(gender)
+output: Male
 
 // updation
 secondName="G"
@@ -100,7 +108,6 @@ console.log(secondName)
 // declaration
 // let secondName="govindraj"
 // console.log(secondName)
-
 // Uncaught SyntaxError: Identifier 'secondName' has already been declared (at basics.js:80:5)Understand this error
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -119,20 +126,21 @@ console.log(pi)
     const pi=3
     console.log(pi)
 }
+
+// {
+//     console.log("Inside the block",pi)
+//     Uncaught ReferenceError: Cannot access 'pi' before initialization
+//     const pi=3
+//     console.log(pi)
+// }
+
+console.log("outside the block",country)
+// basics.js:96 Uncaught ReferenceError: country is not defined
+
 const country="Japan"
 console.log(country)
 // Japan
 
-// {
-    // console.log("Inside the block",pi)
-    // Uncaught ReferenceError: Cannot access 'pi' before initialization
-    // const pi=3
-    // console.log(pi)
-// }
-
-// console.log("outside the block",country)
-// basics.js:96 Uncaught ReferenceError: country is not defined
-    
 // updation
 // pi=3.1475
 // console.log(pi)
