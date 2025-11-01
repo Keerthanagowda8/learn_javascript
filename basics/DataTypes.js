@@ -1,15 +1,17 @@
 // Data Types:
-//     Primitive
-//         String - set of chracter enclosed within Quotes '',"",``(back ticks),
+//     Primitive : They store single values . they are immutable 
+//         String 
 //         Number
 //         BigInt
 //         undefined
 //         Boolean
 //         Null
-//     Non-Primitive
+//     Non-Primitive : They store collection of values or complex entities.they are mutable
 //         object
 
-// 1. String
+// ------------------------------------------------------------------------------------------------------
+
+// 1. String - set of character enclosed within Quotes '',"",``(back ticks),
 
 let userName='Keerthana'
 console.log("firstName:",userName)                          
@@ -18,15 +20,19 @@ console.log(typeof(userName))
 // string
 let studentOf="Pyspider's"
 console.log(userName+" is student of "+ studentOf)
-console.log(typeof(studentOf))      
+// Keerthana is student of Pyspider's
+console.log(typeof(studentOf))    
+// string  
 
 let course=`Python full stack`
 console.log(`${userName} is a student of ${studentOf} learning ${course}`) // Template literal
+// Keerthana is a student of Pyspider's learning Python full stack
 console.log(typeof(course))
+// string
 
 // -----------------------------------------------------------------------------------------------
 
-// Number: Integer, Float, Octal, Hexadecimal, Binary
+// 2. Number: Integer, Float, Octal, Hexadecimal, Binary
 
 let a=1
 console.log(typeof(a))
@@ -47,14 +53,38 @@ console.log(typeof(d))
 // let e=01234
 // console.log(e)
 // 668
-console.log(typeof(e))
+// console.log(typeof(e))
 // number
+
+let g=0b1010
+console.log(typeof(g))
+// number
+console.log(g)
+// 10
+
+let h=0xA
+console.log(typeof(h))
+// number
+console.log(h)
+// 10
+
+let i=0o12
+console.log(typeof(i))
+// number
+console.log(i)
+// 10
 
 let f=12345678901234567899
 console.log(f)
 // 12345678901234567000
 console.log(typeof(f))
 // number
+
+// ----------------------------------------------------------------------------------------------
+
+// 3. BigInt:
+// JS uses 64-bit floating point, large numbers lose precision
+// so uses BigInt for large object
 
 let bigNum=BigInt("123344567890987654322222222234567899")
 console.log(bigNum)
@@ -76,7 +106,7 @@ console.log(typeof largeNumber)
 
 // -----------------------------------------------------------------------------------------------
 
-// Boolean: true or false
+// 4.Boolean: true or false
 
 let isloged=true
 console.log(typeof(isloged))
@@ -96,7 +126,7 @@ console.log(typeof islogged)
 
 // -----------------------------------------------------------------------------------------------
 
-// Undifined: 
+// 5. Undifined: A variable is declared but not assigned a value 
 
 let age
 console.log("keep your age as:",age)
@@ -115,9 +145,9 @@ console.log(typeof(age))
 // console.log(salary)
 // SyntaxError: Missing initializer in const declaration
 
-// -------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
 
-// Null:Returning non existing object . 
+// 6. Null:Returning non existing object . 
 // It is a special value, which represent empty , nothing
 // intentinally making the value as absent 
 
@@ -127,6 +157,10 @@ console.log(salary)
 console.log(typeof salary)
 // object
 
+// This is know bug in javascript since creation. typeof(null) returns object due 
+// to legacy implementation  
+
+// -----------------------------------------------------------------------------------------------
 // Object: collection of values in keys and values pair 
 
 let trainTicket={
