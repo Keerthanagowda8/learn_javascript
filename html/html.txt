@@ -1,0 +1,204 @@
+web: (world wide web ) : System of interconnected documents and resources that are accessed through the Internet using a web browser
+Web Technology : It refers to the tools, laungages and techniques used to develop and run websits and web applications .
+HTML: HyperText Markup Laungage
+    It is the standard language used to create web pages.
+    It tells the web browser what to display and how to structure the content on the page.
+    "HyperText" means text that contains links (called hyperlinks) to other texts or pages.
+    A markup language uses tags to tell the browser how to display text or other content.
+
+Structure:
+<!DOCTYPE html> : It tells the browser that the document is written in HTML5.
+<html></html> : This is the root tag of the entire web page.everything we write must be inside this.
+<head></head> : It contain information about the web pages that is not visible content.
+    It includes things like title of page, Metadata , links to CSS files or icons and javascript file connections
+<body></body> : It contains everything that appears on the screen the actual content
+
+elements : An HTML element is everything from the start tag to the end tag , inculding the content betweem them.
+
+Tags: HTML tag is a keyword written inside angle brackets that tells the browser how to display content on a webpage 
+    <tagname></tagname>
+    Types:
+    Paired Tags : Tags having both opening and closing tags 
+    ex: <html></html>,<p></p>
+    Unpaired tag: Tags having only one tag. single tags are self closing tags.
+    ex: <br>,<hr>,<img>,<link>,<input>,<meta>
+
+Attributes: Attributes are the extra information added to HTML tags to define the properties or behavior of an element 
+    <tagname attribute name="value">content</tagname>
+    ex: <a href="https"></a>
+    Attributes are always written inside the opening tag.
+    They come in name="value" pairs.
+    Attribute names are not case-sensitive
+    You can use multiple attributes in one tag.
+    Ex: src,alt,title,width,height,style,id,class,value,type,type,placeholder
+
+Heading tag: <h1> to <h6> tags
+    Used to define headings or titles
+    <h1> is largest and <h6> is smallest 
+
+Paragraph tag: defines a paragraph of text
+    <p></p>
+
+Anchor Tag: Used to create hyperlinks to other web pages or sections
+    <a></a>
+
+Image Tag: Displays an image on the web page.It has no closing tag
+    <img>
+
+Line Break:Inserts a line break (moves text to next line). No closing tag
+    <br>
+
+Horizontal Rule: Adds a horizontal line acroos the page . Empty tag.
+    <hr>
+
+Preformatted text: Used to display text exactly as it is wriiten in the HTML file.
+    includes spaces , tabs and line breaks 
+    ex: <pre>
+    Your text here
+            will appear exactly
+      in this format!
+        </pre>
+
+Character Formatting; It changing how the text looks like making it bold,italic,underlined,colored, or highlighted
+    <b></b>,<i></i>,<u></u>,<small.</small>,<big></big>,<ins></ins>,<em></emp>
+    <strong></strong>,<mark></mark>,<sub></sub>,<sup></sup>,<q></q>,<abbr></abbr>
+    <bdo></bdo>,<del></del>,<code></code>
+
+Scrolling text: Allow us to insert scrolling or moving text.
+    by using <marque> we can insert moving text
+    <marquee>Text</marquee>
+    Attribute and parameter : 
+        Behaviour : scroll,alternate
+        Direction : left,right,up,down
+        Scrollamount : any number
+        Scrolldelay : any number
+        Loop : any number
+        Heigth and width : px
+        vspace and hspace : px
+
+Media : Media refers to any multimedia content like images,audio,video or animations that can be embed into a webpage
+    Image : The img tag is used to display an image on a webpage 
+    <img src="image.jpg" alt="description" width="300" height="200">
+
+    Audio : Audio tag is used to embed sound or music files.
+    <audio controls autoplay> <source src="song.mp3" type="audio/mpeg"></audio>
+    Attributes: 
+        controls: Displays play, pause, and volume buttons
+        autoplay: Starts playing automatically
+        loop: Repeats the audio
+        muted: Starts audio in mute mode
+
+    Video : Used to embed videos in an HTML page 
+    <video width="400" height="300" controls><source src="movie.mp4" type="video/mp4"> </video>
+    Attributes: 
+        controls: Displays play, pause
+        autoplay: Starts playing automatically
+        loop: Repeats the video
+        muted: Starts video in mute mode
+        poster: Display an image before video Starts
+        width, height: Set video size
+
+    Iframe : It is used to embed another webpage or video inside our page.
+    <iframe src="https://www.youtube.com/embed/abc123" width="560" height="315"></iframe>
+
+Hyperlink: If we want to create a relationship between one page to another page internally then we have to create hyperlinks.
+    With the help of another tag we are able to create a hyperlinks
+    Attribute: Target-(_self,_blank,_parent,_top)
+
+List:It is used to display related items one after another either with numbers,bullets, custom symbols
+    There are 3 types of list:
+    Ordered list : displays items in a specific order usually numbers
+        Attribute: type,start,reversed
+    Unorderd list: Display items with bullets instead of numbers 
+        Attribute: type
+    Discription List: Used to display terms and their descriptions.
+    ex: <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+        </dl>
+Nested List : can put one list inside another 
+
+Table: It is used to display data in rows and columns
+    Tags used: 
+        <table> - to define a table
+        <tr> - define a table rows
+        <th> - define table heading 
+        <td> - define the data cell
+        <caption> - Adds a title or heading to the table 
+        <thead> - groups header content
+        <tbody> - groups body content 
+        <tfoot> - groups footer content 
+
+    Attributes:
+        border - add border around cells
+        cellpadding - add space inside cells
+        cellspacing - add space between cells
+        width - sets table width
+        align - align table position
+    Combining cells:
+        Colspan - Merge columns
+        Rowspan - Merge rows
+
+Sematic tags : they clearly describe the purpose or role on a web page to both browsers and developers.
+        They tell wt kind of content they contain 
+        <header> - Top section of a page or article (logo, title, nav)
+        <nav> -	Navigation links (menus, buttons)
+        <section> -	A group or block of related content
+        <article> -	Independent, self-contained content (like a blog post or news article)
+        <aside>	- Side content (ads, sidebars, tips)
+        <footer> -	Bottom section (copyright, contact info)
+        <main> - Used to wrap the primary content of a page (excluding header,nav and footer)
+        <figure> / <figcaption> - For images and captions
+
+Non- Sematic Tags: Do not describe the meaning of their content they only provide structure or grouping
+    div Tag : The <div> tag stands for division.
+        It is used to group large blocks of content together — like sections, forms, or containers.
+        It is a block-level element, which means it starts on a new line and takes up full width of the page.
+
+    Span Tag : The <span> tag is used to style or manipulate a small part of text within a line.
+        It is an inline element, which means it does not start on a new line — it only takes up as much width as needed
+
+Form : Used to collect user input such as names, email, passwords, feedback, or any data that needs to be sent to a server.
+    <form> is the main container for all form elements.
+    Used to send data to web server
+    Attribute:
+        action - Specifies where to send the form data (URL or file)
+        method - Specifies how data is sent — GET or POST	
+        name - Gives a name to the form	
+        target - Specifies where to display response	
+        enctype	- Used for file uploads
+
+    Input Tag: Used to create different types of form fields
+        Attribute:
+            type - Specifies input type (text, password, etc.)
+            name - Gives the field a name (used when sending data)
+            value - Defines default value
+            placeholder - Shows hint text inside box
+            required - Makes field mandatory
+            readonly - Field cannot be edited
+            disabled - Field is disabled
+        
+        Types:
+            text - Single-line text box	
+            password - Password box (hidden input)
+            email - Email input
+            number - Numeric input
+            radio - Single-choice button
+            checkbox - Multiple-choice box
+            file - Upload file
+            date - Date picker
+        
+    Label Tag: Used to defina a label(text) for an input box.
+
+    Select and option Tags: Used for drop down menus
+
+    textarea Tag: Used for multi line text input 
+
+    button Tag: Creates a clickable button 
+        submit - Submit button
+        reset - Clears form fields
+        button - Clickable button
+
+    Fieldset / Legend : Groups related form elements .
