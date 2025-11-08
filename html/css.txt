@@ -1,0 +1,61 @@
+A combinator in CSS is something that defines the relationship between two selectors.
+It tells the browser how elements are related in the HTML structure and which ones to style.
+
+Descendant Combinator (space)
+Selects all elements inside another element (no matter how deep).
+<div>
+  <p>This is inside div</p>
+  <section>
+    <p>This is also inside div</p>
+  </section>
+</div>
+
+<p>This is outside div</p>
+
+div p {
+  color: blue;
+}
+All <p> tags inside <div> (even nested ones) become blue.
+The <p> outside <div> is not affected.
+
+
+Child Combinator (>)
+Selects only the direct child elements (not nested deeper)<div>
+  <p>Direct child</p>
+  <section>
+    <p>Nested child</p>
+  </section>
+</div>
+
+div > p {
+  color: green;
+}
+Only the first <p> (directly inside <div>) becomes green.
+The <p> inside <section> is ignored.
+
+Adjacent Sibling Combinator (+)
+Selects the first element immediately after another (same parent)
+<h2>Heading</h2>
+<p>Paragraph just after h2</p>
+<p>Another paragraph</p>
+
+h2 + p {
+  color: red;
+}
+Only the first <p> after <h2> is red.
+The next paragraph is not affected.
+
+General Sibling Combinator (~)
+Selects all elements after a given element (same parent)
+<h2>Heading</h2>
+<p>First paragraph</p>
+<p>Second paragraph</p>
+
+h2 ~ p {
+  color: purple;
+}
+
+All <p> tags that come after <h2> (and share the same parent) become purple.
+
+----------------------------------------------------------------------------------------
+

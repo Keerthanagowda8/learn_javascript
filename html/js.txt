@@ -1,0 +1,257 @@
+DOM (Document Object Model)
+
+The DOM is a programming interface for HTML and XML documents.
+It represents the entire HTML document in a hierarchical (tree-like) structure, so that developers can easily access and modify its content.
+It defines how HTML elements can be accessed, traversed, and manipulated using programming languages like JavaScript.
+Developers can access and manipulate elements using their tag name, id, class, or attributes, through methods and properties provided by the DOM API.
+
+Structure of the DOM
+
+The DOM is represented as a tree structure called the DOM tree.
+It consists of branches and nodes.
+Each node represents a part of the document — such as an element, attribute, or text.
+All nodes are connected through branches, forming a hierarchy.
+The root node is the <html> element, and every node in the DOM tree ends with an object that can be accessed or manipulated.
+
+
+document.getElementById("id")
+
+This method is used to select an HTML element by its unique id attribute.
+It searches the entire document and returns the first element that matches the given ID.
+Return type: It returns a single element object, or null if no element is found
+
+document.getElementsByClassName("className")
+
+This method finds all elements in the document that have the specified class name.
+It searches the whole HTML page (or a specific section if called on an element) and returns a live HTMLCollection — meaning if new elements with that class are added later, they automatically appear in the collection.
+Return type: HTMLCollection (similar to an array, but not exactly an array)
+if className doesnt exist empty collection is returned
+
+document.getElementsByName("name")
+
+This method finds all elements that have a specific name attribute (mostly used for form elements).
+It returns a NodeList (not HTMLCollection) of all elements with that name.
+Return type: NodeList (a collection of elements that can be looped using for or forEach)
+if Name doesnt exist empty nodelist is returned
+
+document.getElementsByTagName("tagName")
+
+This method finds all elements with a specific HTML tag name, like "p", "div", or "li".
+It returns a live HTMLCollection — so if new tags are added dynamically, they’ll appear automatically in the result.
+Return type: HTMLCollection
+if TagName doesnt exist empty collection is returned
+
+document.querySelector("selector")
+
+querySelector() is used to select the first element that matches a given CSS selector (like an id, class, or tag).
+It scans the document from top to bottom and stops as soon as it finds the first match.
+How it works:
+We can use any CSS-style selector — for example:
+#id for ID
+.class for class
+tag for tag name
+or even a combination like "div > p" or "ul li:first-child"
+Return type:It returns a single Element object, or null if no element matches the selector.
+
+document.querySelectorAll("selector")
+
+querySelectorAll() is used to select all elements that match a given CSS selector.
+It returns a collection of all matches — not just the first one.
+How it works:
+It looks through the entire document and gathers every element that matches the selector,
+but unlike getElementsByClassName, it returns a static NodeList, meaning it does not update automatically if new elements are added later.
+Return type:It returns a NodeList (which looks like an array) of all matching elements.
+
+
+innerHTML
+innerHTML is used to get or set the HTML code inside an element.
+If you use it to get, it returns the element’s content including any HTML tags.
+If you use it to set, it replaces the entire inner HTML of that element with new content (you can include tags too).
+Return Type:String – containing HTML code or text
+
+textContent
+textContent is used to get or set only the text inside an element — it ignores HTML tags.
+It reads all the text, even from hidden elements (display:none).
+When you set textContent, it removes any HTML tags and adds plain text.
+Return Type:String – only the text content (no HTML tags)
+
+innerText
+innerText is similar to textContent, but it only returns visible text (it ignores hidden elements).
+It also takes into account the CSS styling (like display:none or visibility:hidden).
+When you set it, it changes only what’s visible in the page layout
+Return Type:String – visible text only
+
+value
+value is used with form elements like <input>, <textarea>, or <select> to get or set user-entered data.
+If you use it to get, it shows what the user typed or selected.
+If you use it to set, it changes the input field’s content.
+Return Type:String – the text or number entered in the input.
+
+document.createElement("tagName")
+The createElement() method is used to create a new HTML element dynamically using JavaScript.
+It does not automatically appear on the webpage when created — you must add (append) it manually using another method like appendChild() or append().
+We can add attribute by using setattribute()
+You pass the tag name (like 'div', 'p', 'button', etc.) as a string to the method,
+and it returns a new element object that you can customize — for example, by adding text, classes, styles, or attributes.
+Return Type:It returns an HTMLElement object (a JavaScript representation of the new HTML tag)
+
+
+A popup box is a small window that appears on the screen to interact with the user — for example, showing a message, asking for confirmation, or collecting input.
+In JavaScript, we mainly have three types of popup boxes:
+alert()
+    The alert() box is used to show a simple message to the user.
+    It only has an OK button — the user must click it to continue.
+    It is often used for notifications or debugging (like checking variable values).
+    When called, it pauses the script until the user clicks “OK.”
+    Return type:Undefined (it doesn’t return anything).
+confirm()
+    The confirm() box is used when you need the user to accept or reject something.
+    It shows two buttons — OK and Cancel.
+    If the user clicks OK, it returns true; if Cancel, it returns false.
+    Return type:Boolean (true or false)
+prompt()
+    The prompt() box asks the user to enter some text (like a name or age).
+    It shows a text box along with OK and Cancel buttons.
+    If the user clicks OK, it returns the text entered.
+    If the user clicks Cancel, it returns null.
+    Return type:String (user input) or null
+All these are built-in methods provided by the browser (not HTML)
+
+Event:
+An event is any action performed by the user or browser that the webpage can respond to.
+Examples: clicking a button, typing text, submitting a form, hovering the mouse, or resizing the window.
+
+Event handling:
+Event handling means writing code that will execute when an event occurs.
+It connects user actions (like clicking a button) to functions that perform tasks (like showing a message or changing color).
+
+Types of Events
+
+Mouse Events – onclick, ondblclick, onmouseover, onmouseout
+Keyboard Events – onkeydown, onkeyup, onkeypress
+Form Events – onsubmit, onchange, onfocus, onblur
+Window Events – onload, onresize, onscroll
+
+Ways to Handle Events
+
+Inline Event Handling (HTML Level)
+We can add the event directly inside an HTML tag using an attribute like onclick
+
+DOM Event Handling (Assigning with JavaScript)
+We can get the element using DOM and assign a function to its event property
+
+Using addEventListener() (Modern Method)
+This is the preferred and modern method to handle events.
+It allows multiple event handlers on the same element.
+Syntax: element.addEventListener("event", function);
+
+When an event occurs, the browser automatically passes an event object to the handler function.
+It contains details like which key was pressed, which element was clicked, and the mouse position.
+
+Event Propagation (Bubbling and Capturing)
+
+When an event occurs on nested elements, it passes through three phases:
+Capturing phase – event moves from the top element to the target.
+Target phase – event reaches the target element.
+Bubbling phase – event moves back from the target to the outer elements.
+By default, JavaScript uses bubbling (inner to outer).
+
+Removing an Event
+We can remove an event listener using removeEventListener()
+
+Mouse Events
+These events are triggered when the user interacts with the mouse.
+They are commonly used for buttons, images, and clickable areas.
+onclick – occurs when an element is clicked.
+ondblclick – occurs when an element is double-clicked.
+onmouseover – occurs when the mouse pointer moves over an element.
+onmouseout – occurs when the mouse pointer moves out of an element.
+onmousedown – occurs when the mouse button is pressed down.
+onmouseup – occurs when the mouse button is released.
+onmousemove – occurs when the mouse moves within an element
+
+Keyboard Events
+These events occur when the user interacts with the keyboard.
+They are often used for forms, shortcuts, and search boxes.
+onkeydown – occurs when a key is pressed down.
+onkeypress – occurs when a key is pressed and held (deprecated in modern JS).
+onkeyup – occurs when a key is released.
+
+Form Events
+These events occur when the user interacts with form elements like inputs, checkboxes, or forms.
+onsubmit – triggered when a form is submitted.
+onchange – triggered when the value of an input or select changes.
+onfocus – triggered when an element gains focus (clicked or selected).
+onblur – triggered when an element loses focus.
+oninput – triggered whenever the user types or changes input text.
+
+Window or Document Events
+These events are related to the browser window or document itself.
+They are useful for detecting when the page loads, resizes, or scrolls.
+onload – occurs when the page or image finishes loading.
+onresize – occurs when the browser window is resized.
+onscroll – occurs when the user scrolls the page.
+onunload – occurs when the page is closed or refreshed.
+
+Focus Events
+These are triggered when elements like input fields gain or lose focus.
+onfocus – occurs when an element is focused.
+onblur – occurs when focus is moved away.
+
+Promise in JavaScript
+
+A Promise is an object that handles asynchronous operations in JavaScript.
+It acts as a placeholder for a value that will be available in the future, after the asynchronous task finishes.
+Promises help avoid “callback hell” and make asynchronous code easier to manage.
+A promise can’t switch from failure to success or from success to failure, and it executes only once.
+
+States of a Promise
+Pending – Initial state; the result is not yet available. Output: undefined
+Fulfilled (Resolved) – Operation completed successfully. Output: value (number, string, or any data)
+Rejected – Operation failed. Output: error message
+
+Promise Functions
+resolve() – Called when the operation completes successfully.
+reject() – Called when the operation fails or returns an error.
+
+The Promise constructor takes a function with two parameters: resolve and reject.
+Inside this function, you write the code for the asynchronous task.
+If the task completes successfully, you call resolve(value).
+If the task fails, you call reject(error).
+The .then() method runs when the promise is resolved successfully.
+The .catch() method runs when the promise is rejected.
+The .finally() method runs after both success or failure — it is mainly used for cleanup or closing messages
+
+There are two main types of storage in JavaScript:
+
+Local Storage
+
+Session Storage
+
+Both are part of the Web Storage API, used to store data in the browser as key-value pairs.
+They only store strings, and data must be converted using JSON.stringify() and JSON.parse() when working with objects.
+
+1. Local Storage
+
+Definition:
+Local Storage allows you to store data permanently in the browser.
+The data remains even after the browser is closed or the computer is restarted.
+Features:
+It provides permanent storage until manually deleted.
+Storage limit is around 5MB per domain.
+Stores data as key–value pairs (both are strings).
+Supports CRUD operations – Create, Read, Update, Delete.
+
+Syntax and Methods:
+setItem(key, value) – Stores data in key–value form.
+localStorage.setItem("name", "Keerthana");
+
+getItem(key) – Retrieves data for a given key.
+let user = localStorage.getItem("name");
+console.log(user); // Output: Keerthana
+
+removeItem(key) – Deletes a specific key from local storage.
+localStorage.removeItem("name");
+
+clear() – Removes all data from local storage.
+localStorage.clear();
